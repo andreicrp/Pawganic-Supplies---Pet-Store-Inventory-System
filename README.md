@@ -1,46 +1,107 @@
-Pet Store Inventory Management System
+# Pet Store Inventory Management System
 
-A web-based inventory management system designed to help pet stores efficiently manage products, monitor stock levels, track inventory, and maintain organized product records through a user-friendly interface.
+## Overview
 
-Features
-User authentication and login system
-Role-based access control
-Product management (Add, Edit, Delete)
-Inventory and stock monitoring
-Product image upload and display
-Product search and filtering
-Category management
-Stock update functionality
-Responsive user interface
-Database-driven inventory records
-Technologies Used
-PHP
-MySQL
-HTML
-CSS
-JavaScript
-Bootstrap
-XAMPP
-System Modules
-Admin Module
-Manage products
-Update stock quantities
-Upload product images
-Manage product categories
-View inventory records
-Search and filter products
-User Module
-Browse available products
-View product details
-Search products
-Purchase products
-View account information
-Database
+The Pet Store Inventory Management System is a web-based application developed to streamline inventory management operations for pet stores. The system enables administrators to efficiently manage products, monitor stock levels, organize inventory records, and maintain product information through a centralized platform.
 
-The system uses a MySQL database to store:
+## Features
 
-User accounts
-Product information
-Product categories
-Inventory records
-Transaction data
+* User Authentication and Authorization
+* Product Management (Add, Edit, Delete)
+* Inventory and Stock Monitoring
+* Product Image Upload and Management
+* Product Search and Filtering
+* Category Management
+* User Account Management
+* Responsive User Interface
+* Database-Driven Inventory Tracking
+
+## Technologies Used
+
+### Frontend
+
+* HTML
+* CSS
+* JavaScript
+* Bootstrap
+
+### Backend
+
+* PHP
+
+### Database
+
+* MySQL
+
+### Development Environment
+
+* XAMPP
+
+## System Modules
+
+### Administrator Module
+
+* Manage products and categories
+* Update inventory and stock levels
+* Upload and manage product images
+* Monitor product availability
+* Manage user accounts
+* Search and filter inventory records
+
+### User Module
+
+* Browse available products
+* View product information
+* Search products
+* Purchase products
+* View account details
+
+## Database Structure
+
+The system stores and manages:
+
+* User Accounts
+* Product Information
+* Product Categories
+* Inventory Records
+* Transaction Records
+
+
+
+## Objectives
+
+* Improve inventory management efficiency
+* Monitor product stock levels accurately
+* Reduce manual inventory tracking
+* Organize product information effectively
+* Provide a centralized inventory management platform
+
+## Screenshots
+
+Add screenshots of:
+
+* Login Page
+* Dashboard
+* Product Management Page
+* Inventory Management Page
+* Shop Page
+* User Management Page
+
+## Future Enhancements
+
+* Sales Reports and Analytics
+* Barcode or QR Code Integration
+* Inventory Forecasting
+* Email Notifications
+* Enhanced Mobile Responsiveness
+* Multi-Branch Inventory Support
+
+## Author
+
+**Andrei Carpio**
+Bachelor of Science in Information Technology
+University of Perpetual Help System Manila
+
+## License
+
+This project is developed for educational, academic, and portfolio purposes.
