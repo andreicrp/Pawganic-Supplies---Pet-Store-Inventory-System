@@ -78,15 +78,12 @@ The system stores and manages:
 
 ## Screenshots
 
-Add screenshots of:
-
-* Login Page
-  ![image alt](https://github.com/andreicrp/Pawganic-Supplies---Pet-Store-Inventory-System/blob/main/screenshots/Login%20.png)
-* Dashboard
-* Product Management Page
-* Inventory Management Page
-* Shop Page
-* User Management Page
+![image alt](https://github.com/andreicrp/Pawganic-Supplies---Pet-Store-Inventory-System/blob/main/screenshots/Login%20.png)
+![image alt](https://github.com/andreicrp/Pawganic-Supplies---Pet-Store-Inventory-System/blob/1b809df70d1850f8c9fa9014abb71eea182c0829/screenshots/Main.png)
+![image alt](https://github.com/andreicrp/Pawganic-Supplies---Pet-Store-Inventory-System/blob/1b809df70d1850f8c9fa9014abb71eea182c0829/screenshots/Shop.png)
+![image alt](https://github.com/andreicrp/Pawganic-Supplies---Pet-Store-Inventory-System/blob/1b809df70d1850f8c9fa9014abb71eea182c0829/screenshots/Purchase%20History.png)
+![image alt](https://github.com/andreicrp/Pawganic-Supplies---Pet-Store-Inventory-System/blob/1b809df70d1850f8c9fa9014abb71eea182c0829/screenshots/Checkout.png)
+![image alt](https://github.com/andreicrp/Pawganic-Supplies---Pet-Store-Inventory-System/blob/1b809df70d1850f8c9fa9014abb71eea182c0829/screenshots/Checkout2.png)
 
 ## Future Enhancements
 
