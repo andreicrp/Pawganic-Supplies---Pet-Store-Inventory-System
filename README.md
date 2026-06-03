@@ -1,4 +1,4 @@
-# Pet Store Inventory Management System
+# Pawganic - Pet Store Inventory Management System
 
 ## Overview
 
