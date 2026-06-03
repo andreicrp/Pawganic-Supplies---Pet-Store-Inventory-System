@@ -65,8 +65,10 @@ if (isset($_POST['buy_now']) && $_POST['buy_now'] == "1" && isset($_POST['produc
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure Checkout - Pawganic Supplies</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -699,6 +701,282 @@ if (isset($_POST['buy_now']) && $_POST['buy_now'] == "1" && isset($_POST['produc
         }
         
         /* Section Title */
+
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 15px;
+            }
+
+            .header-section {
+                margin-bottom: 30px;
+                padding: 25px 15px;
+            }
+
+            .header-section h1 {
+                font-size: 1.8rem;
+            }
+
+            .progress-steps {
+                gap: 8px;
+                margin-bottom: 30px;
+            }
+
+            .step {
+                gap: 4px;
+                font-size: 0.8rem;
+            }
+
+            .step-number {
+                width: 28px;
+                height: 28px;
+                font-size: 0.8rem;
+            }
+
+            .step-divider {
+                display: none;
+            }
+
+            .checkout-wrapper {
+                gap: 15px;
+            }
+
+            .checkout-form {
+                padding: 20px;
+            }
+
+            .form-section {
+                margin-bottom: 25px;
+            }
+
+            .section-title {
+                font-size: 1rem;
+                margin-bottom: 18px;
+                gap: 8px;
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            .form-label {
+                font-size: 0.9rem;
+                margin-bottom: 6px;
+            }
+
+            .form-control, .form-select {
+                padding: 10px 12px;
+                font-size: 0.95rem;
+            }
+
+            .payment-methods {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .payment-label {
+                padding: 12px;
+            }
+
+            .payment-icon {
+                font-size: 1.5rem;
+            }
+
+            .payment-label-text {
+                font-size: 0.85rem;
+            }
+
+            .order-summary-sidebar {
+                padding: 20px;
+                position: static;
+                top: auto;
+            }
+
+            .summary-title {
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+
+            .summary-item {
+                gap: 10px;
+                margin-bottom: 12px;
+            }
+
+            .summary-item-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            .trust-badges {
+                gap: 10px;
+                margin-top: 15px;
+            }
+
+            .badge-item {
+                gap: 5px;
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 15px 10px;
+            }
+
+            .header-section {
+                margin-bottom: 20px;
+                padding: 15px 10px;
+                border-radius: 12px;
+            }
+
+            .header-section h1 {
+                font-size: 1.3rem;
+                margin-bottom: 5px;
+            }
+
+            .header-section p {
+                font-size: 0.85rem;
+            }
+
+            .progress-steps {
+                flex-direction: column;
+                gap: 5px;
+                margin-bottom: 20px;
+            }
+
+            .step {
+                font-size: 0.75rem;
+                gap: 3px;
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .checkout-wrapper {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .checkout-form {
+                padding: 15px;
+                border-radius: 12px;
+            }
+
+            .form-section {
+                margin-bottom: 20px;
+            }
+
+            .section-title {
+                font-size: 0.95rem;
+                margin-bottom: 15px;
+                padding-bottom: 8px;
+                gap: 6px;
+            }
+
+            .section-title i {
+                font-size: 1rem;
+            }
+
+            .form-group {
+                margin-bottom: 12px;
+            }
+
+            .form-label {
+                font-size: 0.85rem;
+                margin-bottom: 5px;
+            }
+
+            .form-control, .form-select {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+                border-radius: 8px;
+            }
+
+            .payment-methods {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                margin-bottom: 15px;
+            }
+
+            .payment-option {
+                margin-bottom: 0;
+            }
+
+            .payment-label {
+                flex-direction: column;
+                padding: 10px;
+                gap: 8px;
+            }
+
+            .payment-icon {
+                font-size: 1.3rem;
+                width: 100%;
+                height: auto;
+                padding: 6px;
+            }
+
+            .payment-label-text {
+                font-size: 0.8rem;
+            }
+
+            .order-summary-sidebar {
+                padding: 15px;
+                margin-bottom: 0;
+            }
+
+            .summary-title {
+                font-size: 0.95rem;
+                margin-bottom: 12px;
+            }
+
+            .summary-item {
+                gap: 8px;
+                margin-bottom: 10px;
+            }
+
+            .summary-item-image {
+                width: 50px;
+                height: 50px;
+            }
+
+            .summary-item-name {
+                font-size: 0.85rem;
+            }
+
+            .summary-item-price {
+                font-size: 0.8rem;
+            }
+
+            .summary-row {
+                font-size: 0.85rem;
+                margin-bottom: 8px;
+            }
+
+            .summary-row.total {
+                font-size: 1rem;
+                margin-top: 10px;
+                padding-top: 10px;
+            }
+
+            .btn-checkout {
+                padding: 12px;
+                font-size: 0.9rem;
+                margin-top: 15px;
+                width: 100%;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                gap: 8px;
+                margin-top: 10px;
+                padding-top: 10px;
+            }
+
+            .badge-item {
+                gap: 5px;
+                font-size: 0.7rem;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>

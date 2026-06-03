@@ -1,11 +1,7 @@
 <?php
 include 'db.php';
 
-if (!isset($_SESSION['user_id'])) {
-    die("User not logged in.");
-}
-
-$user_balance = $_SESSION['balance'] ?? 0;
+$user_balance = isset($_SESSION['user_id']) ? $_SESSION['balance'] ?? 0 : 0;
 
 $search_query = "";
 $sort_by = "";
@@ -33,6 +29,7 @@ $result = $stmt->get_result();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -271,7 +268,8 @@ $result = $stmt->get_result();
         border: 1px solid #e0e0e0;
     }
 
-    .profile-dropdown:hover .dropdown-content {
+    .profile-dropdown:hover .dropdown-content,
+    .profile-dropdown.open .dropdown-content {
         display: block;
     }
 
@@ -926,6 +924,370 @@ $result = $stmt->get_result();
         font-size: 1.1rem;
         box-shadow: 0 6px 12px rgba(0,0,0,0.08);
     }
+
+    /* Mobile Responsive Design */
+    @media (max-width: 1024px) {
+        .navbar {
+            padding: 15px 20px;
+        }
+
+        .navbar .nav-links {
+            gap: 15px;
+        }
+
+        .navbar .nav-links a {
+            font-size: 14px;
+            padding: 8px 12px;
+        }
+
+        .page-title {
+            font-size: 2rem;
+        }
+
+        .card {
+            border-radius: 15px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .slide-cart {
+            width: 380px;
+            right: -380px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        body {
+            padding: 0;
+        }
+
+        .navbar {
+            flex-wrap: wrap;
+            padding: 12px 15px;
+            gap: 15px;
+        }
+
+        .navbar .logo {
+            font-size: 20px;
+        }
+
+        .logo-img {
+            height: 40px;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .navbar .nav-links a {
+            font-size: 12px;
+            padding: 6px 10px;
+        }
+
+        .page-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .search-section {
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .search-section input,
+        .search-section select {
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        .card {
+            border-radius: 12px;
+        }
+
+        .card-img-container {
+            height: 200px;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .price-tag {
+            top: -10px;
+            right: 15px;
+            font-size: 1rem;
+        }
+
+        .btn-primary, .btn-success, .btn-danger {
+            padding: 8px 12px;
+            font-size: 0.9rem;
+        }
+
+        .slide-cart {
+            width: 90vw;
+            max-width: 350px;
+            right: -350px;
+            padding: 20px;
+        }
+
+        .cart-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .profile-dropdown {
+            margin-left: auto;
+        }
+
+        .custom-toast {
+            min-width: 200px;
+            max-width: 85vw;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        footer {
+            padding: 40px 20px 15px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            gap: 10px;
+        }
+
+        .social-links {
+            gap: 12px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        * {
+            font-size: 14px;
+        }
+
+        body {
+            padding: 0;
+        }
+
+        .navbar {
+            flex-direction: column;
+            padding: 10px;
+            gap: 10px;
+            border-bottom: 3px solid #333;
+        }
+
+        .navbar .logo {
+            width: 100%;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .logo-img {
+            height: 35px;
+        }
+
+        .navbar .nav-links {
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 12px;
+        }
+
+        .navbar .nav-links a {
+            padding: 5px 8px;
+            font-size: 11px;
+            border-radius: 20px;
+        }
+
+        .page-title {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .search-section {
+            padding: 12px;
+            margin: 0 10px 15px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .search-section input,
+        .search-section select {
+            font-size: 13px;
+            padding: 8px;
+            width: 100%;
+        }
+
+        .search-btn {
+            width: 100%;
+            height: auto;
+            padding: 10px;
+        }
+
+        .page-content {
+            padding: 10px;
+        }
+
+        .products-grid {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 0 10px;
+        }
+
+        .card {
+            border-radius: 10px;
+        }
+
+        .card-img-container {
+            height: 150px;
+        }
+
+        .card-body {
+            padding: 10px;
+        }
+
+        .card-title {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .price-tag {
+            top: -8px;
+            right: 10px;
+            font-size: 0.85rem;
+            padding: 4px 8px;
+        }
+
+        .btn-primary, .btn-success, .btn-danger {
+            padding: 6px 10px;
+            font-size: 0.8rem;
+            width: 100%;
+        }
+
+        .slide-cart {
+            width: 100%;
+            max-width: 100%;
+            right: -100%;
+            padding: 15px;
+            border-radius: 0;
+        }
+
+        .cart-item {
+            font-size: 0.85rem;
+        }
+
+        .cart-item img {
+            max-width: 60px;
+            max-height: 60px;
+        }
+
+        .profile-dropdown {
+            flex-shrink: 0;
+        }
+
+        .profile-pic {
+            width: 35px;
+            height: 35px;
+        }
+
+        .dropdown-content {
+            min-width: 180px;
+            right: 0;
+        }
+
+        .dropdown-profile-name {
+            font-size: 0.9rem;
+        }
+
+        .dropdown-content a {
+            padding: 10px 12px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            padding: 30px 15px 10px;
+        }
+
+        footer::before {
+            height: 10px;
+        }
+
+        .footer-section h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .footer-section p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            width: 35px;
+            height: 35px;
+            font-size: 0.8rem;
+        }
+
+        .footer-links a {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .copyright {
+            font-size: 12px;
+            padding-top: 15px;
+        }
+
+        .custom-toast {
+            min-width: 180px;
+            max-width: 90vw;
+            font-size: 0.8rem;
+            padding: 12px 15px;
+            bottom: 20px;
+            left: 10px;
+            right: 10px;
+        }
+
+        .logout-btn {
+            width: 100%;
+            justify-content: center;
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+    }
     </style>
 </head>
 <body>
@@ -959,6 +1321,7 @@ $result = $stmt->get_result();
                 <div class="dropdown-profile-balance">₱' . number_format($nav_balance, 2) . '</div>
               </div>
               <a href="profile.php"><i class="fas fa-user"></i>Profile</a>
+              <a href="purchase_history.php"><i class="fas fa-history"></i>Purchase History</a>
               <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
             </div>
           </div>';
@@ -1056,21 +1419,34 @@ $result = $stmt->get_result();
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-outline-primary mb-3 w-100" onclick="addToCart(<?= $row['id'] ?>)" <?= $row['stock'] <= 0 ? 'disabled' : '' ?>>
-                        <i class="fas fa-cart-plus me-2"></i>Add to Cart
-                    </button>
-                    <form method="POST" action="checkout.php">
-                        <input type="hidden" name="buy_now" value="1">
-                        <input type="hidden" name="product_id" value="<?= $row['id'] ?>">
-                        <input type="hidden" name="quantity" value="1">
-                        <button type="submit" class="btn btn-primary w-100" <?= $row['stock'] <= 0 ? 'disabled' : '' ?>>
-                            <?php if ($row['stock'] <= 0): ?>
-                                <i class="fas fa-ban me-2"></i>Out of Stock
-                            <?php else: ?>
-                                <i class="fas fa-shopping-bag me-2"></i>Buy Now
-                            <?php endif; ?>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <button class="btn btn-outline-primary mb-3 w-100" onclick="addToCart(<?= $row['id'] ?>)" <?= $row['stock'] <= 0 ? 'disabled' : '' ?>>
+                            <i class="fas fa-cart-plus me-2"></i>Add to Cart
                         </button>
-                    </form>
+                    <?php else: ?>
+                        <a href="login.php" class="btn btn-outline-primary mb-3 w-100">
+                            <i class="fas fa-sign-in-alt me-2"></i>Login to Add to Cart
+                        </a>
+                    <?php endif; ?>
+                    
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <form method="POST" action="checkout.php">
+                            <input type="hidden" name="buy_now" value="1">
+                            <input type="hidden" name="product_id" value="<?= $row['id'] ?>">
+                            <input type="hidden" name="quantity" value="1">
+                            <button type="submit" class="btn btn-primary w-100" <?= $row['stock'] <= 0 ? 'disabled' : '' ?>>
+                                <?php if ($row['stock'] <= 0): ?>
+                                    <i class="fas fa-ban me-2"></i>Out of Stock
+                                <?php else: ?>
+                                    <i class="fas fa-shopping-bag me-2"></i>Buy Now
+                                <?php endif; ?>
+                            </button>
+                        </form>
+                    <?php else: ?>
+                        <a href="login.php" class="btn btn-primary w-100">
+                            <i class="fas fa-sign-in-alt me-2"></i>Login to Buy
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -1192,6 +1568,36 @@ function showToast(message) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Profile dropdown click handler
+    const profileDropdown = document.querySelector('.profile-dropdown');
+    const profilePic = document.querySelector('.profile-pic');
+    const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+
+    if (profileDropdown) {
+        profilePic.addEventListener('click', function(e) {
+            e.stopPropagation();
+            profileDropdown.classList.toggle('open');
+        });
+
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Keep dropdown open briefly for smooth transition
+                profileDropdown.classList.add('open');
+                // Allow navigation to happen smoothly
+                setTimeout(() => {
+                    profileDropdown.classList.remove('open');
+                }, 100);
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!profileDropdown.contains(e.target)) {
+                profileDropdown.classList.remove('open');
+            }
+        });
+    }
+
     updateCartDisplay();
 });
 </script>

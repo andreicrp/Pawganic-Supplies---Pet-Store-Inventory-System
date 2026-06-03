@@ -147,7 +147,8 @@ include 'db.php';
       display: inline-block;
     }
 
-    .profile-dropdown:hover .dropdown-content {
+    .profile-dropdown:hover .dropdown-content,
+    .profile-dropdown.open .dropdown-content {
       display: block;
       opacity: 1;
       transform: translateY(0);
@@ -596,6 +597,7 @@ include 'db.php';
                 <div class="dropdown-profile-balance">₱' . number_format($balance, 2) . '</div>
               </div>
               <a href="profile.php"><i class="fas fa-user"></i>Profile</a>
+              <a href="purchase_history.php"><i class="fas fa-history"></i>Purchase History</a>
               <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
             </div>
           </div>';
@@ -732,6 +734,36 @@ include 'db.php';
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      // Profile dropdown click handler
+      const profileDropdown = document.querySelector('.profile-dropdown');
+      const profilePic = document.querySelector('.profile-pic');
+      const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+
+      if (profileDropdown) {
+        profilePic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          profileDropdown.classList.toggle('open');
+        });
+
+        dropdownLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            // Keep dropdown open briefly for smooth transition
+            profileDropdown.classList.add('open');
+            // Allow navigation to happen smoothly
+            setTimeout(() => {
+              profileDropdown.classList.remove('open');
+            }, 100);
+          });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!profileDropdown.contains(e.target)) {
+            profileDropdown.classList.remove('open');
+          }
+        });
+      }
+
       // Add active class to current page in navbar
       const currentLocation = window.location.href;
       const navLinks = document.querySelectorAll('.nav-links a');

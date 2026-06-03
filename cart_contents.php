@@ -1,13 +1,14 @@
 <?php
+session_start();
 include 'db.php';
+
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    die("You need to login to purchase.");
+}
 
 $user_id = $_SESSION['user_id'];
 $cart = [];
-
-// Check if the user is logged in
-if (!isset($user_id)) {
-    die("User not logged in.");
-}
 
 // Fetch cart items from database
 $stmt = $conn->prepare("SELECT c.product_id, c.quantity, p.name, p.price FROM cart c JOIN products p ON c.product_id = p.id WHERE c.user_id = ?");

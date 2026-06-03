@@ -1,5 +1,29 @@
 <?php
+session_start();
 include 'db.php';
+
+// Routing logic - redirect based on user role
+if (isset($_SESSION['user_id'])) {
+    // User is logged in, check their role
+    $userId = $_SESSION['user_id'];
+    $stmt = $conn->prepare("SELECT role FROM users WHERE id = ?");
+    $stmt->bind_param("i", $userId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
+    
+    if ($user && $user['role'] === 'admin') {
+        // Admin user - stay on this admin inventory page
+    } else {
+        // Regular user - redirect to main page
+        header("Location: main.php");
+        exit;
+    }
+} else {
+    // Not logged in - redirect to login page
+    header("Location: main.php");
+    exit;
+}
 
 // DELETE PRODUCT
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_product'])) {
