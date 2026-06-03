@@ -81,6 +81,7 @@ The system stores and manages:
 Add screenshots of:
 
 * Login Page
+  ![image alt](https://github.com/andreicrp/Pawganic-Supplies---Pet-Store-Inventory-System/blob/main/screenshots/Login%20.png}
 * Dashboard
 * Product Management Page
 * Inventory Management Page
